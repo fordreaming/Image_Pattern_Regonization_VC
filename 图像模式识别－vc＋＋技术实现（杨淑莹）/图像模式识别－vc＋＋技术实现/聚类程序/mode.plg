@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: mode - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\mengling\LOCALS~1\Temp\RSPEC.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/mode.pdb" /debug /machine:I386 /out:"Debug/mode.exe" /pdbtype:sept 
+".\Debug\CDib.obj"
+".\Debug\Cluster.obj"
+".\Debug\DlgFuzzyDistance.obj"
+".\Debug\DlgInfor.obj"
+".\Debug\DlgMohu.obj"
+".\Debug\MainFrm.obj"
+".\Debug\mode.obj"
+".\Debug\modeDoc.obj"
+".\Debug\modeView.obj"
+".\Debug\ModeViewRight.obj"
+".\Debug\StdAfx.obj"
+".\Debug\YIchuansuanfa.obj"
+".\Debug\mode.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\mengling\LOCALS~1\Temp\RSPEC.tmp"
+<h3>Output Window</h3>
+Linking...
+Creating temporary file "C:\DOCUME~1\mengling\LOCALS~1\Temp\RSPEE.tmp" with contents
+[
+/nologo /o"Debug/mode.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\CDib.sbr"
+".\Debug\Cluster.sbr"
+".\Debug\DlgFuzzyDistance.sbr"
+".\Debug\DlgInfor.sbr"
+".\Debug\DlgMohu.sbr"
+".\Debug\MainFrm.sbr"
+".\Debug\mode.sbr"
+".\Debug\modeDoc.sbr"
+".\Debug\modeView.sbr"
+".\Debug\ModeViewRight.sbr"
+".\Debug\YIchuansuanfa.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\mengling\LOCALS~1\Temp\RSPEE.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+mode.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
