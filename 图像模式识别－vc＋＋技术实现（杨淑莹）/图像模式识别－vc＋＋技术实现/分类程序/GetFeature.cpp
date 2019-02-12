@@ -164,7 +164,7 @@ void GetFeature::Save(int cls)
 	for(int i=pattern[cls].number;i>0;i--)
 		for(int j=0;j<25;j++)
 			pattern[cls].feature[i][j]=pattern[cls].feature[i-1][j];
-	for(i=0;i<25;i++)
+	for(int i=0;i<25;i++)
 		pattern[cls].feature[0][i]=testsample[i];
 	pattern[cls].number++;	
 }

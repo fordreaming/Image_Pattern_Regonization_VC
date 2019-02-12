@@ -182,7 +182,7 @@ void BpNet::train(double p[][5],double t[][4],int samplenum)
 	{ 
 		for(int i=0;i<inNum;i++)
 			x[i]=p[isamp][i];
-		for(i=0;i<outNum;i++)
+		for(int i=0;i<outNum;i++)
 			yd[i]=t[isamp][i];
 
 		//构造每个样品的输入和输出标准
@@ -190,7 +190,7 @@ void BpNet::train(double p[][5],double t[][4],int samplenum)
 		{
 			o1[j]=0.0;
 
-			for(i=0;i<inNum;i++)
+			for(int i=0;i<inNum;i++)
 				o1[j]=o1[j]+w[i][j]*x[i];//隐含层各单元输入激活值
 			x1[j]=1.0/(1+exp(-o1[j]-b1[j]));//隐含层各单元的输出
 		}
@@ -199,38 +199,38 @@ void BpNet::train(double p[][5],double t[][4],int samplenum)
 		{
 			o2[k]=0.0;
 
-			for(j=0;j<hideNum;j++)
+			for(int j=0;j<hideNum;j++)
 				o2[k]=o2[k]+w1[j][k]*x1[j];//输出层各单元输入激活值
 			x2[k]=1.0/(1.0+exp(-o2[k]-b2[k]));//输出层各单元输出
 		}
 
-		for(k=0;k<outNum;k++)
+		for(int k=0;k<outNum;k++)
 		{
 			e=0.0;
 			qq[k]=(yd[k]-x2[k])*x2[k]*(1.-x2[k]);//希望输出与实际输出的偏差
 			e+=fabs(yd[k]-x2[k])*fabs(yd[k]-x2[k]);//计算均方差
 
-			for(j=0;j<hideNum;j++)
+			for(int j=0;j<hideNum;j++)
 				w1[j][k]=w1[j][k]+rate_w1*qq[k]*x1[j];//下一次的隐含层和输出层之间的新连接权
 			e=sqrt(e);
 			if(e<error)
 				tjpt[k]=1;
 		}
 
-		for(j=0;j<hideNum;j++)
+		for(int j=0;j<hideNum;j++)
 		{
 			pp[j]=0.0;
-			for(k=0;k<outNum;k++)
+			for(int k=0;k<outNum;k++)
 				pp[j]=pp[j]+qq[k]*w1[j][k];
 			pp[j]=pp[j]*x1[j]*(1-x1[j]);//隐含层的校正误差
 
-			for(i=0;i<inNum;i++)
+			for(int i=0;i<inNum;i++)
 				w[i][j]=w[i][j]+rate_w*pp[j]*x[i];//下一次的输入层和隐含层之间的新连接权
 		}
 
-		for(k=0;k<outNum;k++)
+		for(int k=0;k<outNum;k++)
 			b2[k]=b2[k]+rate_b2*qq[k];//下一次的隐含层和输出层之间的新阈值
-		for(j=0;j<hideNum;j++)
+		for(int j=0;j<hideNum;j++)
 			b1[j]=b1[j]+rate_b1*pp[j];//下一次的输入层和隐含层之间的新阈值
 
 	}//end isamp样品循环
@@ -261,7 +261,7 @@ double * BpNet::sim(double *psim)
 		x2[k]=1.0/(1.0+exp(-o2[k]-b2[k]));//输出层各单元输出
 	} 
 
-	for(k=0;k<outNum;k++)
+	for(int k=0;k<outNum;k++)
 	{
 		shuchu[k]=x2[k];
 	} 

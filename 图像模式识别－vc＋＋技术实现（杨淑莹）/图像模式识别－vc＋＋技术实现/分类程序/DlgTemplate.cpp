@@ -418,7 +418,7 @@ BOOL CDlgTemplate::OnInitDialog()
 		+m_6+m_7+m_8+m_9+m_0;
 	UpdateData(FALSE);
 	CheckRadioButton(IDC_RADIO1,IDC_RADIO10,IDC_RADIO1);
-	for(i=0;i<pattern[1].number;i++)
+	for(int i=0;i<pattern[1].number;i++)
 	{
 		CString str;
 		str.Format("%d",i);
