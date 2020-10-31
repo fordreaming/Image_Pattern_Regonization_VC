@@ -1,0 +1,2 @@
+# Image_Pattern_Regonization_VC
+book，source code Image_Pattern_Regonization_VC
